@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorkFromHome</string>
+    <string name="due_date">Fecha Fin: %1$s</string>
+    <string name="hours_and_rate">Horas: %1$d $/Hora: %2$.2f</string>
+    <string name="is_in_english">En Inglés</string>
+</resources>
