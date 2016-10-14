@@ -9,8 +9,8 @@
     <string name="main_menu_settings">CONFIGURACIÓN</string>
     <string name="main_menu_quit">SALIR</string>
     <string name="not_implemented">No implementado.</string>
-    <string name="context_menu_apply">Postularme</string>
-    <string name="context_menu_share">Compartir</string>
+    <string name="context_menu_apply">Postularse a esta oferta</string>
+    <string name="context_menu_share">Compartir esta oferta</string>
     <string name="application_registered">Tu postulación ha sido registrada.</string>
-    <string name="share_listing">Compartir oferta...</string>
+    <string name="share_listing">Compartir esta oferta...</string>
 </resources>

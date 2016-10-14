@@ -3,9 +3,9 @@
     <string name="hours_and_rate">Hours: %1$d $/Hour: %2$.2f</string>
     <string name="due_date">Due Date: %1$s</string>
     <string name="is_in_english">In English</string>
-    <string name="main_menu_create">CREATE AN OFFER</string>
+    <string name="main_menu_create">CREATE AN OPENING</string>
     <string name="main_menu_create_short">CREATE</string>
-    <string name="main_menu_view">VIEW MY OFFERS</string>
+    <string name="main_menu_view">VIEW MY OPENINGS</string>
     <string name="main_menu_settings">SETTINGS</string>
     <string name="main_menu_quit">QUIT</string>
     <string name="not_implemented">Not implemented.</string>
@@ -14,8 +14,8 @@
     <string name="flag_ar" translatable="false">ARS</string>
     <string name="flag_uk" translatable="false">GBP</string>
     <string name="flag_br" translatable="false">BRL</string>
-    <string name="context_menu_apply">Apply for job</string>
-    <string name="context_menu_share">Share listing</string>
+    <string name="context_menu_apply">Apply for this opening</string>
+    <string name="context_menu_share">Share this opening</string>
     <string name="application_registered">Your application has been registered.</string>
-    <string name="share_listing">Share listing...</string>
+    <string name="share_listing">Share this opening...</string>
 </resources>
