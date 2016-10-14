@@ -10,19 +10,17 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
 /**
- * Created by user on 10/11/2016.
+ * Created by Pablo Zanitti (pzanitti) on 10/11/2016.
+ * JobsAdapter is used to create a Jobs Listview.
  */
 
-public class JobsAdapter extends BaseAdapter {
-    LayoutInflater inflater;
-    private DecimalFormat df = new DecimalFormat("#.##");
+class JobsAdapter extends BaseAdapter {
+    private LayoutInflater inflater;
     private List<Trabajo> jobsList;
-    Trabajo currentJob;
-    Context context;
+    private Context context;
 
     JobsAdapter(Context context, List<Trabajo> jobsList) {
         super();
@@ -47,6 +45,8 @@ public class JobsAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
+        Trabajo currentJob;
+
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.row, parent, false);
         }

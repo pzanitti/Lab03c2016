@@ -13,12 +13,12 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemLongClickListener {
     ListView jobsListView;
-    private ArrayList<Trabajo> jobs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<Trabajo> jobs;
 
         jobs = new ArrayList<>();
         jobs.addAll(Arrays.asList(Trabajo.TRABAJOS_MOCK));
