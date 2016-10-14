@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android/apk/res-auto" >
+    <item android:id="@+id/mainMenuCreate"
+        android:title="@string/main_menu_create"
+        android:titleCondensed="@string/main_menu_create_short"
+        app:showAsAction="always|withText" />
+    <item android:id="@+id/mainMenuView"
+        android:title="@string/main_menu_view"/>
+    <item android:id="@+id/mainMenuSettings"
+        android:title="@string/main_menu_settings"/>
+    <item android:id="@+id/mainMenuQuit"
+        android:title="@string/main_menu_quit"/>
+</menu>

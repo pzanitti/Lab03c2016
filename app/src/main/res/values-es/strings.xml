@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">WorkFromHome</string>
     <string name="due_date">Fecha Fin: %1$s</string>
     <string name="hours_and_rate">Horas: %1$d $/Hora: %2$.2f</string>
     <string name="is_in_english">En Inglés</string>
+    <string name="main_menu_create">CREAR UNA OFERTA</string>
+    <string name="main_menu_create_short">CREAR</string>
+    <string name="main_menu_view">VER MIS OFERTAS</string>
+    <string name="main_menu_settings">CONFIGURACIÓN</string>
+    <string name="main_menu_quit">SALIR</string>
+    <string name="not_implemented">No implementado.</string>
 </resources>
