@@ -9,4 +9,7 @@
     <string name="main_menu_settings">CONFIGURACIÓN</string>
     <string name="main_menu_quit">SALIR</string>
     <string name="not_implemented">No implementado.</string>
+    <string name="context_menu_apply">Postularme</string>
+    <string name="context_menu_share">Compartir</string>
+    <string name="application_registered">Tu postulación ha sido registrada.</string>
 </resources>

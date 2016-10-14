@@ -2,18 +2,19 @@ package ggz.dam.frsf.utn.edu.ar.lab03c2016;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemLongClickListener {
+public class MainActivity extends AppCompatActivity {
     ListView jobsListView;
 
     @Override
@@ -28,12 +29,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         jobsListView = (ListView) findViewById(R.id.jobsListView);
         JobsAdapter jobsAdapter = new JobsAdapter(MainActivity.this, jobs);
         jobsListView.setAdapter(jobsAdapter);
-        jobsListView.setOnItemLongClickListener(this);
+        registerForContextMenu(jobsListView);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+    }
+
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,9 +52,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         return true;
     }
 
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(MainActivity.this, ((TextView) view.findViewById(R.id.jobDescription)).getText().toString(), Toast.LENGTH_SHORT).show();
-        return true;
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.contextMenuApply:
+                Toast.makeText(this, getResources().getString(R.string.application_registered), Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.contextMenuShare:
+                Toast.makeText(this, "Share.", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return false;
     }
 }
