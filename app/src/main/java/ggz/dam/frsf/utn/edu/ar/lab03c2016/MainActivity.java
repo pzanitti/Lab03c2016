@@ -1,5 +1,6 @@
 package ggz.dam.frsf.utn.edu.ar.lab03c2016;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -55,10 +56,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.contextMenuApply:
-                Toast.makeText(this, getResources().getString(R.string.application_registered), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.application_registered, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.contextMenuShare:
-                Toast.makeText(this, "Share.", Toast.LENGTH_SHORT).show();
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_listing)));
                 return true;
         }
         return false;

@@ -17,4 +17,5 @@
     <string name="context_menu_apply">Apply for job</string>
     <string name="context_menu_share">Share listing</string>
     <string name="application_registered">Your application has been registered.</string>
+    <string name="share_listing">Share listing...</string>
 </resources>
