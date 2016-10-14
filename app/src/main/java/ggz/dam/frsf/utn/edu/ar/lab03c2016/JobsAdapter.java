@@ -10,8 +10,6 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -22,7 +20,6 @@ import java.util.List;
 public class JobsAdapter extends BaseAdapter {
     LayoutInflater inflater;
     private DecimalFormat df = new DecimalFormat("#.##");
-    View row;
     private List<Trabajo> jobsList;
     Trabajo currentJob;
     Context context;
@@ -50,29 +47,31 @@ public class JobsAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.row, parent, false);
+        }
         currentJob = (Trabajo) this.getItem(position);
-        row = inflater.inflate(R.layout.row, parent, false);
 
-        TextView jobPosition = (TextView) row.findViewById(R.id.jobPosition);
+        TextView jobPosition = (TextView) convertView.findViewById(R.id.jobPosition);
         jobPosition.setText(currentJob.getCategoria().getDescripcion());
 
-        TextView jobDescription = (TextView) row.findViewById(R.id.jobDescription);
+        TextView jobDescription = (TextView) convertView.findViewById(R.id.jobDescription);
         jobDescription.setText(currentJob.getDescripcion());
 
-        TextView jobEstimate = (TextView) row.findViewById(R.id.jobEstimate);
+        TextView jobEstimate = (TextView) convertView.findViewById(R.id.jobEstimate);
         jobEstimate.setText(context.getResources().getString((R.string.hours_and_rate),
                 currentJob.getHorasPresupuestadas(),
                 currentJob.getPrecioMaximoHora()));
 
-        TextView jobDueDate = (TextView) row.findViewById(R.id.jobDueDate);
+        TextView jobDueDate = (TextView) convertView.findViewById(R.id.jobDueDate);
         String jobDueDateString = DateFormat.format("yyyy.MM.dd", currentJob.getFechaEntrega()).toString();
         jobDueDate.setText(context.getResources().getString((R.string.due_date),
                 jobDueDateString));
 
-        CheckBox jobIsInEnglish = (CheckBox) row.findViewById(R.id.jobIsInEnglish);
-        jobIsInEnglish.setChecked((currentJob.getRequiereIngles() == true)? true : false);
+        CheckBox jobIsInEnglish = (CheckBox) convertView.findViewById(R.id.jobIsInEnglish);
+        jobIsInEnglish.setChecked(currentJob.getRequiereIngles());
 
-        ImageView jobCurrency = (ImageView) row.findViewById(R.id.jobCurrency);
+        ImageView jobCurrency = (ImageView) convertView.findViewById(R.id.jobCurrency);
         switch (currentJob.getMonedaPago()) {
             case 1:
                 jobCurrency.setImageResource(R.drawable.flag_us);
@@ -90,6 +89,6 @@ public class JobsAdapter extends BaseAdapter {
                 jobCurrency.setImageResource(R.drawable.flag_br);
                 break;
         }
-        return(row);
+        return(convertView);
     }
 }
