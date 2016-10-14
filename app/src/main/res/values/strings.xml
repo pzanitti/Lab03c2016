@@ -9,4 +9,9 @@
     <string name="main_menu_settings">SETTINGS</string>
     <string name="main_menu_quit">QUIT</string>
     <string name="not_implemented">Not implemented.</string>
+    <string name="flag_us" translatable="false">USD</string>
+    <string name="flag_eu" translatable="false">EUR</string>
+    <string name="flag_ar" translatable="false">ARS</string>
+    <string name="flag_uk" translatable="false">GBP</string>
+    <string name="flag_br" translatable="false">BRL</string>
 </resources>

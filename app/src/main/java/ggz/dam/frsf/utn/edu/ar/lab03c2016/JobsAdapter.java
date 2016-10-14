@@ -75,18 +75,23 @@ class JobsAdapter extends BaseAdapter {
         switch (currentJob.getMonedaPago()) {
             case 1:
                 jobCurrency.setImageResource(R.drawable.flag_us);
+                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_us));
                 break;
             case 2:
                 jobCurrency.setImageResource(R.drawable.flag_eu);
+                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_eu));
                 break;
             case 3:
                 jobCurrency.setImageResource(R.drawable.flag_ar);
+                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_ar));
                 break;
             case 4:
                 jobCurrency.setImageResource(R.drawable.flag_uk);
+                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_uk));
                 break;
             case 5:
                 jobCurrency.setImageResource(R.drawable.flag_br);
+                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_br));
                 break;
         }
         return(convertView);
