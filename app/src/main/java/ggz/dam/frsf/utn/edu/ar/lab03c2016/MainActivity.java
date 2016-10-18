@@ -16,18 +16,19 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     ListView jobsListView;
+    ArrayList<Trabajo> jobs;
+    JobsAdapter jobsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<Trabajo> jobs;
 
         jobs = new ArrayList<>();
         jobs.addAll(Arrays.asList(Trabajo.TRABAJOS_MOCK));
 
         jobsListView = (ListView) findViewById(R.id.jobsListView);
-        JobsAdapter jobsAdapter = new JobsAdapter(MainActivity.this, jobs);
+        jobsAdapter = new JobsAdapter(MainActivity.this, jobs);
         jobsListView.setAdapter(jobsAdapter);
         registerForContextMenu(jobsListView);
     }
@@ -45,11 +46,24 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mainMenuCreate) {
-            startActivity(new Intent(this, PostActivity.class));
+            startActivityForResult(new Intent(this, PostActivity.class), 0);
         } else {
             Toast.makeText(MainActivity.this, R.string.not_implemented, Toast.LENGTH_SHORT).show();
         }
         return true;
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            int newJobId = jobs.size() + 1;
+            Trabajo newJob = new Trabajo(newJobId, data.getSerializableExtra("jobDescription").toString());
+            jobs.add(newJob);
+            jobsAdapter.notifyDataSetChanged();
+
+            Toast.makeText( MainActivity.this,
+                            getString(R.string.post_success),
+                            Toast.LENGTH_LONG).show();
+        }
     }
 
     public boolean onContextItemSelected(MenuItem item) {

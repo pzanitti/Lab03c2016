@@ -17,5 +17,6 @@
     <string name="context_menu_apply">Apply for this opening</string>
     <string name="context_menu_share">Share this opening</string>
     <string name="application_registered">Your application has been registered.</string>
-    <string name="share_listing">Share this opening...</string>
+    <string name="share_listing">Share this opening…</string>
+    <string name="post_success">Post successful.</string>
 </resources>

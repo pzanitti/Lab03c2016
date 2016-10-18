@@ -12,5 +12,6 @@
     <string name="context_menu_apply">Postularse a esta oferta</string>
     <string name="context_menu_share">Compartir esta oferta</string>
     <string name="application_registered">Tu postulación ha sido registrada.</string>
-    <string name="share_listing">Compartir esta oferta...</string>
+    <string name="share_listing">Compartir esta oferta…</string>
+    <string name="post_success">Oferta agregada con éxito.</string>
 </resources>
