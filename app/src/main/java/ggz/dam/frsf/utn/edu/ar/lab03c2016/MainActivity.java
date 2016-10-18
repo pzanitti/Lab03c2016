@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mainMenuCreate) {
-            Toast.makeText(MainActivity.this, "CREATE", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, PostActivity.class));
         } else {
             Toast.makeText(MainActivity.this, R.string.not_implemented, Toast.LENGTH_SHORT).show();
         }

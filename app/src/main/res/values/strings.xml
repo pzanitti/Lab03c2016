@@ -3,8 +3,8 @@
     <string name="hours_and_rate">Hours: %1$d $/Hour: %2$.2f</string>
     <string name="due_date">Due Date: %1$s</string>
     <string name="is_in_english">In English</string>
-    <string name="main_menu_create">CREATE AN OPENING</string>
-    <string name="main_menu_create_short">CREATE</string>
+    <string name="main_menu_create">POST AN OPENING</string>
+    <string name="main_menu_create_short">POST</string>
     <string name="main_menu_view">VIEW MY OPENINGS</string>
     <string name="main_menu_settings">SETTINGS</string>
     <string name="main_menu_quit">QUIT</string>
