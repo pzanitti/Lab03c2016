@@ -78,13 +78,19 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                 if(TextUtils.isEmpty(postHourlyRate.getText().toString())) {
                     postHourlyRate.setError(getText(R.string.failure_hourlyrate_empty));
                     hasErrors = true;
-                } else if (Float.parseFloat(postHourlyRate.getText().toString()) == 0) {
+                } else if (Double.parseDouble(postHourlyRate.getText().toString()) == 0) {
                     postHourlyRate.setError(getText(R.string.failure_hourlyrate_zero));
                     hasErrors = true;
                 }
 
                 if (!hasErrors) {
                     Intent intent = new Intent();
+
+                    newJob.setDescripcion(postDescription.getText().toString());
+                    newJob.setCategoria((Categoria) categorySpinner.getSelectedItem());
+                    newJob.setHorasPresupuestadas(Integer.parseInt(postEstimate.getText().toString()));
+                    newJob.setPrecioMaximoHora(Double.parseDouble(postHourlyRate.getText().toString()));
+
                     intent.putExtra("newJob", newJob);
                     setResult(RESULT_OK, intent);
                     finish();

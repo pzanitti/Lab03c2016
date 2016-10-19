@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             int newJobId = jobs.size() + 1;
-            Trabajo newJob = new Trabajo(newJobId, data.getSerializableExtra("jobDescription").toString());
+            Trabajo newJob = (Trabajo) data.getSerializableExtra("newJob");
+            newJob.setId(newJobId);
             jobs.add(newJob);
             jobsAdapter.notifyDataSetChanged();
 
