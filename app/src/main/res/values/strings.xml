@@ -22,4 +22,13 @@
     <string name="post_success">Post successful.</string>
     <string name="share_message">Check out this WorkFromHome opening! A %1$s position is open and the going rate is %2$.2f!</string>
     <string name="failure_description_empty">The opening description cannot be empty</string>
+    <string name="post_jobCategory">Category</string>
+    <string name="post_jobCurrency">Currency</string>
+    <string name="post_jobEstimate">Estimate (hrs)</string>
+    <string name="post_jobHourlyRate">Hourly Rate</string>
+    <string name="failure_currency_unchecked">You must select a currency.</string>
+    <string name="failure_estimate_empty">You must input an estimate</string>
+    <string name="failure_estimate_zero">The estimate cannot be zero</string>
+    <string name="failure_hourlyrate_empty">You must input an hourly rate</string>
+    <string name="failure_hourlyrate_zero">The hourly rate cannot be zero</string>
 </resources>

@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Categoria implements Serializable {
+class Categoria implements Serializable {
     private Integer id;
     private String descripcion;
     private List<Trabajo> trabajos;
 
-    public Categoria(){
-        this.trabajos=new ArrayList<Trabajo>();
+    private Categoria(){
+        this.trabajos = new ArrayList<>();
     }
 
-    public Categoria(Integer id,String desc){
+    private Categoria(Integer id,String desc){
         this();
         this.id = id;
         this.descripcion = desc;
@@ -27,7 +27,7 @@ public class Categoria implements Serializable {
         this.id = id;
     }
 
-    public String getDescripcion() {
+    String getDescripcion() {
         return descripcion;
     }
 
@@ -47,7 +47,7 @@ public class Categoria implements Serializable {
         this.trabajos.add(t);
     }
 
-    public static final Categoria[] CATEGORIAS_MOCK= new Categoria[]{
+    static final Categoria[] CATEGORIAS_MOCK= new Categoria[]{
             new Categoria(1,"Arquitecto"),
             new Categoria(2,"Desarrollador"),
             new Categoria(3, "Tester"),
@@ -55,4 +55,7 @@ public class Categoria implements Serializable {
             new Categoria(5,"Mobile Developer")
     };
 
+    public String toString() {
+        return this.getDescripcion();
+    }
 }

@@ -16,4 +16,8 @@
     <string name="post_success">Oferta agregada con éxito.</string>
     <string name="share_message">Mirá esta oferta de WorkFromHome! Se abrió una posición para %1$s y por hora ofrecen %2$.2f!</string>
     <string name="failure_description_empty">La descripción de la oferta no puede estar vacía</string>
+    <string name="post_jobCategory">Category</string>
+    <string name="post_jobCurrency">Moneda</string>
+    <string name="post_jobEstimate">Estimado (hrs)</string>
+    <string name="post_jobHourlyRate">Remun. por Hora</string>
 </resources>

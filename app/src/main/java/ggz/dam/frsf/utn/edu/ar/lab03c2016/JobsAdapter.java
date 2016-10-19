@@ -28,7 +28,7 @@ class JobsAdapter extends BaseAdapter {
         this.jobsList = jobsList;
         this.context = context;
     }
-    
+
     private static class ViewHolderItem {
         TextView jobPosition;
         TextView jobDescription;
