@@ -19,4 +19,5 @@
     <string name="application_registered">Your application has been registered.</string>
     <string name="share_listing">Share this opening…</string>
     <string name="post_success">Post successful.</string>
+    <string name="share_message">Check out this WorkFromHome opening! A %1$s position is open and the going rate is %2$.2f!</string>
 </resources>

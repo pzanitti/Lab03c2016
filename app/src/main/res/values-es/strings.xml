@@ -14,4 +14,5 @@
     <string name="application_registered">Tu postulación ha sido registrada.</string>
     <string name="share_listing">Compartir esta oferta…</string>
     <string name="post_success">Oferta agregada con éxito.</string>
+    <string name="share_message">Mirá esta oferta de WorkFromHome! Se abrió una posición para %1$s y por hora ofrecen %2$.2f!</string>
 </resources>

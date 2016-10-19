@@ -3,11 +3,13 @@ package ggz.dam.frsf.utn.edu.ar.lab03c2016;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -67,14 +69,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo itemInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.contextMenuApply:
                 Toast.makeText(this, R.string.application_registered, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.contextMenuShare:
+                Trabajo job = jobs.get(itemInfo.position);
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                String message = String.format(getResources().getString(R.string.share_message),
+                            job.getCategoria().getDescripcion(),
+                            job.getPrecioMaximoHora());
+                sendIntent.putExtra(Intent.EXTRA_TEXT, message);
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_listing)));
                 return true;
