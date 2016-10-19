@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">WorkFromHome</string>
     <string name="hours_and_rate">Hours: %1$d $/Hour: %2$.2f</string>
@@ -20,4 +21,5 @@
     <string name="share_listing">Share this opening…</string>
     <string name="post_success">Post successful.</string>
     <string name="share_message">Check out this WorkFromHome opening! A %1$s position is open and the going rate is %2$.2f!</string>
+    <string name="failure_description_empty">The opening description cannot be empty</string>
 </resources>

@@ -3,6 +3,7 @@ package ggz.dam.frsf.utn.edu.ar.lab03c2016;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,10 +31,21 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.postButton:
-                Intent intent = new Intent();
-                intent.putExtra("jobDescription", postDescription.getText().toString());
-                setResult(RESULT_OK, intent);
-                finish();
+                boolean hasErrors = false;
+
+                // Validate description
+                if(TextUtils.isEmpty(postDescription.getText().toString())) {
+                    postDescription.setError(getText(R.string.failure_description_empty));
+                    hasErrors = true;
+                }
+
+                if (!hasErrors) {
+                    Intent intent = new Intent();
+                    intent.putExtra("jobDescription", postDescription.getText().toString());
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+                break;
         }
     }
 }
