@@ -28,6 +28,15 @@ class JobsAdapter extends BaseAdapter {
         this.jobsList = jobsList;
         this.context = context;
     }
+    
+    private static class ViewHolderItem {
+        TextView jobPosition;
+        TextView jobDescription;
+        TextView jobEstimate;
+        TextView jobDueDate;
+        CheckBox jobIsInEnglish;
+        ImageView jobCurrency;
+    }
 
     @Override
     public int getCount() {
@@ -46,52 +55,56 @@ class JobsAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         Trabajo currentJob;
+        ViewHolderItem viewHolderItem;
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.row, parent, false);
+            viewHolderItem = new ViewHolderItem();
+            viewHolderItem.jobPosition = (TextView) convertView.findViewById(R.id.jobPosition);
+            viewHolderItem.jobDescription = (TextView) convertView.findViewById(R.id.jobDescription);
+            viewHolderItem.jobEstimate = (TextView) convertView.findViewById(R.id.jobEstimate);
+            viewHolderItem.jobDueDate = (TextView) convertView.findViewById(R.id.jobDueDate);
+            viewHolderItem.jobIsInEnglish = (CheckBox) convertView.findViewById(R.id.jobIsInEnglish);
+            viewHolderItem.jobCurrency = (ImageView) convertView.findViewById(R.id.jobCurrency);
+            convertView.setTag(viewHolderItem);
+        } else {
+            viewHolderItem = (ViewHolderItem) convertView.getTag();
         }
+
         currentJob = (Trabajo) this.getItem(position);
 
-        TextView jobPosition = (TextView) convertView.findViewById(R.id.jobPosition);
-        jobPosition.setText(currentJob.getCategoria().getDescripcion());
-
-        TextView jobDescription = (TextView) convertView.findViewById(R.id.jobDescription);
-        jobDescription.setText(currentJob.getDescripcion());
-
-        TextView jobEstimate = (TextView) convertView.findViewById(R.id.jobEstimate);
-        jobEstimate.setText(context.getResources().getString((R.string.hours_and_rate),
+        viewHolderItem.jobPosition.setText(currentJob.getCategoria().getDescripcion());
+        viewHolderItem.jobDescription.setText(currentJob.getDescripcion());
+        viewHolderItem.jobEstimate.setText(context.getResources().getString((R.string.hours_and_rate),
                 currentJob.getHorasPresupuestadas(),
                 currentJob.getPrecioMaximoHora()));
 
-        TextView jobDueDate = (TextView) convertView.findViewById(R.id.jobDueDate);
         String jobDueDateString = DateFormat.format("yyyy.MM.dd", currentJob.getFechaEntrega()).toString();
-        jobDueDate.setText(context.getResources().getString((R.string.due_date),
+        viewHolderItem.jobDueDate.setText(context.getResources().getString((R.string.due_date),
                 jobDueDateString));
 
-        CheckBox jobIsInEnglish = (CheckBox) convertView.findViewById(R.id.jobIsInEnglish);
-        jobIsInEnglish.setChecked(currentJob.getRequiereIngles());
+        viewHolderItem.jobIsInEnglish.setChecked(currentJob.getRequiereIngles());
 
-        ImageView jobCurrency = (ImageView) convertView.findViewById(R.id.jobCurrency);
         switch (currentJob.getMonedaPago()) {
             case 1:
-                jobCurrency.setImageResource(R.drawable.flag_us);
-                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_us));
+                viewHolderItem.jobCurrency.setImageResource(R.drawable.flag_us);
+                viewHolderItem.jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_us));
                 break;
             case 2:
-                jobCurrency.setImageResource(R.drawable.flag_eu);
-                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_eu));
+                viewHolderItem.jobCurrency.setImageResource(R.drawable.flag_eu);
+                viewHolderItem.jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_eu));
                 break;
             case 3:
-                jobCurrency.setImageResource(R.drawable.flag_ar);
-                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_ar));
+                viewHolderItem.jobCurrency.setImageResource(R.drawable.flag_ar);
+                viewHolderItem.jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_ar));
                 break;
             case 4:
-                jobCurrency.setImageResource(R.drawable.flag_uk);
-                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_uk));
+                viewHolderItem.jobCurrency.setImageResource(R.drawable.flag_uk);
+                viewHolderItem.jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_uk));
                 break;
             case 5:
-                jobCurrency.setImageResource(R.drawable.flag_br);
-                jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_br));
+                viewHolderItem.jobCurrency.setImageResource(R.drawable.flag_br);
+                viewHolderItem.jobCurrency.setContentDescription(context.getResources().getString(R.string.flag_br));
                 break;
         }
         return(convertView);
