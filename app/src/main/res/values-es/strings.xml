@@ -20,4 +20,10 @@
     <string name="post_jobCurrency">Moneda</string>
     <string name="post_jobEstimate">Estimado (hrs)</string>
     <string name="post_jobHourlyRate">Remun. por Hora</string>
+    <string name="post_changeDueDate">CAMBIAR</string>
+    <string name="failure_currency_unchecked">Debe inrgesar una moneda</string>
+    <string name="failure_estimate_empty">Debe ingresar un estimativo</string>
+    <string name="failure_estimate_zero">El estimativo no puede ser cero</string>
+    <string name="failure_hourlyrate_empty">Debe ingresar un monto por hora</string>
+    <string name="failure_hourlyrate_zero">El monto por hora no puede ser cero</string>
 </resources>
