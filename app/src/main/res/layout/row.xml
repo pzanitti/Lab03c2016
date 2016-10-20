@@ -32,8 +32,8 @@
             android:layout_height="match_parent"
             android:contentDescription="@null"
             android:layout_gravity="center_horizontal"
-            android:scaleX="2"
-            android:scaleY="2"
+            android:scaleX="3.5"
+            android:scaleY="3.5"
             android:paddingLeft="5dp"/>
     </LinearLayout>
 
