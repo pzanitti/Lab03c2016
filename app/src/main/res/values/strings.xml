@@ -32,4 +32,5 @@
     <string name="failure_estimate_zero">The estimate cannot be zero</string>
     <string name="failure_hourlyrate_empty">You must input an hourly rate</string>
     <string name="failure_hourlyrate_zero">The hourly rate cannot be zero</string>
+    <string name="failure_due_date">Due date must be in the future</string>
 </resources>

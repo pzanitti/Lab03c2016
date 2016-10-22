@@ -79,7 +79,7 @@ class JobsAdapter extends BaseAdapter {
                 currentJob.getHorasPresupuestadas(),
                 currentJob.getPrecioMaximoHora()));
 
-        String jobDueDateString = DateFormat.format("yyyy.MM.dd", currentJob.getFechaEntrega()).toString();
+        String jobDueDateString = DateFormat.format("yyyy-MM-dd", currentJob.getFechaEntrega()).toString();
         viewHolderItem.jobDueDate.setText(context.getResources().getString((R.string.due_date),
                 jobDueDateString));
 

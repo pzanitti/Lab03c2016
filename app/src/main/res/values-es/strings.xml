@@ -26,4 +26,5 @@
     <string name="failure_estimate_zero">El estimativo no puede ser cero</string>
     <string name="failure_hourlyrate_empty">Debe ingresar un monto por hora</string>
     <string name="failure_hourlyrate_zero">El monto por hora no puede ser cero</string>
+    <string name="failure_due_date">La fecha de entrega debe ser en el futuro</string>
 </resources>
