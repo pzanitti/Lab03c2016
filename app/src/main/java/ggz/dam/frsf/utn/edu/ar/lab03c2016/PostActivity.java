@@ -69,6 +69,23 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                             postDueDateString));
     }
 
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putLong("dueDate", newJob.getFechaEntrega().getTime());
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        newJob.setFechaEntrega(new Date(savedInstanceState.getLong("dueDate")));
+
+        Calendar c = Calendar.getInstance();
+
+        c.setTime(newJob.getFechaEntrega());
+        String postDueDateString = DateFormat.format("yyyy-MM-dd", c).toString();
+        postDueDate.setText(getResources().getString((R.string.due_date),
+                postDueDateString));
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
